@@ -81,6 +81,11 @@ const sidebars = {
         'roadmap',
       ],
     },
+    {
+      type: 'doc',
+      id: 'changelog',
+      label: 'Changelog',
+    },
   ],
 };
 

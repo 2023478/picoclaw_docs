@@ -15,10 +15,11 @@ const sidebars = {
       type: 'category',
       label: 'Installation',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: { type: 'doc', id: 'installation' },
       items: [
-        'installation/maixcam'
+        'installation/licheervnano',
+        'installation/maixcam',
       ],
     },
     {

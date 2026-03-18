@@ -90,6 +90,38 @@ picoclaw-launcher -no-browser -public
 3. 点击运行，PicoClaw 将会被下载并安装到设备上，并启动 PicoClaw 的 Web UI 界面。
 4. 在同一个局域网的浏览器中访问 `http://<设备IP>:18800` 即可进入 PicoClaw 的 Web UI。
 
+## 使用示例
+
+以下是一个简单的实战示例，展示如何在 MaixCAM 上结合 PicoClaw 进行 AI 视觉开发：
+
+1. **基础配置**：首先在 Web UI 或 TUI 中配置好模型和聊天通道。以下以 `Discord` 和 `glm-4.7` 模型为例：
+   - 聊天通道配置：参考 [Discord 配置说明](../channels/discord#配置-discord-channel)。
+   - 模型配置：参考 [模型配置说明](../configuration/model-list)。
+
+2. **生成抓图脚本**：在 Discord 中与 PicoClaw 对话，要求其编写并执行 MaixPy 的抓图脚本：
+
+   > 请参考 https://wiki.sipeed.com/maixpy/doc/zh/vision/camera.html，
+   > 帮我写一个 MaixPy 脚本，抓取一张图片并保存到 /root/capture.jpg
+
+   ![capture](/img/maixcam/capture.jpeg)
+
+3. **生成视觉分析技能**：让 PicoClaw 自动生成一个用于分析刚才所抓取图片的专属技能：
+
+   > 你可以写一个 skill，用于通过大模型分析刚才获取到的那张图像吗？
+
+   ![image_analysis_skill](/img/maixcam/image_analysis_skill.jpeg)
+
+4. **执行图片分析**：调用刚刚创建的技能，对图片内容进行深度解析：
+
+   > 使用刚才创建的技能分析这一张图片，你可以使用 glm-4.6v 模型，API_KEY 可以从 .picoclaw/config.json 中获取。
+
+   ![image_analysis_result](/img/maixcam/image_analysis_result.jpeg)
+
+### 常见问题
+
+- 受限于当前大模型的能力，它不一定能在单次对话中完美完成所有请求。如果遇到执行报错或偏差，您可能需要通过多轮对话引导其修正。
+- 以上仅为一个基础的图文联动示例。PicoClaw 的潜力远不止于此，您可以根据实际业务需求，配置不同的模型和复杂的自动化工作流。
+
 ## 参考与更多资料
 
 想获得更多 MaixCam 硬件资料和使用方法，请访问：

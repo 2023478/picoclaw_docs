@@ -1,3 +1,4 @@
+import argparse
 import os
 import platform
 import signal
@@ -8,8 +9,19 @@ import urllib.request
 from pathlib import Path
 
 
-ACTION = "install"  # Set to "install" or "uninstall"
+DEFAULT_ACTION = "install"
 START_PICOCLAW = True
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Install or uninstall picoclaw.")
+    parser.add_argument(
+        "--action",
+        choices=["install", "uninstall"],
+        default=DEFAULT_ACTION,
+        help=f"Action to perform, defaults to '{DEFAULT_ACTION}'.",
+    )
+    return parser.parse_args()
 
 
 def detect_arch() -> str:
@@ -189,14 +201,14 @@ def start_picoclaw_launcher() -> None:
 
 
 if __name__ == "__main__":
-    if ACTION not in {"install", "uninstall"}:
-        raise ValueError("ACTION must be 'install' or 'uninstall'")
+    args = parse_args()
+    action = args.action
 
     arch = detect_arch()
     print(f"Arch: {arch}")
-    print(f"Action: {ACTION}")
+    print(f"Action: {action}")
 
-    if ACTION == "install":
+    if action == "install":
         if arch.startswith("unknown"):
             print("Unsupported arch, exiting.")
             raise SystemExit(1)

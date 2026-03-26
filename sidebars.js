@@ -34,6 +34,8 @@ const sidebars = {
         'configuration/heartbeat',
         'configuration/tools',
         'configuration/config-reference',
+        'credential-encryption',
+        'sensitive-data-filtering',
       ],
     },
     {
@@ -69,6 +71,32 @@ const sidebars = {
         'providers/antigravity',
         'providers/antigravity-usage',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'hooks',
+        'steering',
+        'spawn-tasks',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Deployment',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'docker',
+        'hardware-compatibility',
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'troubleshooting',
+      label: 'Troubleshooting',
     },
     {
       type: 'category',

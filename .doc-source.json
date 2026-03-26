@@ -1,7 +1,7 @@
 {
   "source_repo": "https://github.com/sipeed/picoclaw",
-  "source_commit": "b89f6445d10545717e5526064472fecbc6340b07",
-  "generated_at": "2026-03-03T00:00:00+08:00",
+  "source_commit": "9d6a445bb175bb3881265c2d68e0685f72ba2786",
+  "generated_at": "2026-03-25T00:00:00+08:00",
   "docs": {
     "docs/intro.md": {
       "source_files": ["README.md", "assets/arch.jpg"]
@@ -72,6 +72,9 @@
     "docs/channels/matrix.md": {
       "source_files": ["pkg/channels/matrix/matrix.go", "pkg/channels/matrix/init.go", "docs/channels/matrix/README.md", "docs/channels/matrix/README.zh.md"]
     },
+    "docs/channels/weixin.md": {
+      "source_files": ["pkg/channels/weixin/weixin.go", "pkg/channels/weixin/api.go", "pkg/channels/weixin/auth.go", "docs/channels/weixin/README.md", "docs/channels/weixin/README.zh.md"]
+    },
     "docs/providers/index.md": {
       "source_files": ["pkg/providers/factory.go", "pkg/providers/factory_provider.go", "pkg/providers/http_provider.go", "pkg/providers/openai_compat/provider.go", "pkg/providers/anthropic/provider.go"]
     },
@@ -80,6 +83,30 @@
     },
     "docs/providers/antigravity-usage.md": {
       "source_files": ["pkg/providers/antigravity_provider.go", "docs/ANTIGRAVITY_USAGE.md"]
+    },
+    "docs/hooks.md": {
+      "source_files": ["docs/hooks/README.md", "pkg/agent/hooks.go", "pkg/config/config.go"]
+    },
+    "docs/steering.md": {
+      "source_files": ["docs/steering.md", "pkg/agent/steering.go", "pkg/config/config.go"]
+    },
+    "docs/spawn-tasks.md": {
+      "source_files": ["docs/spawn-tasks.md", "pkg/tools/spawn.go", "pkg/heartbeat/service.go"]
+    },
+    "docs/credential-encryption.md": {
+      "source_files": ["docs/credential_encryption.md", "pkg/credential/encrypt.go", "pkg/credential/decrypt.go"]
+    },
+    "docs/sensitive-data-filtering.md": {
+      "source_files": ["docs/sensitive_data_filtering.md", "pkg/tools/result.go", "pkg/config/security.go"]
+    },
+    "docs/troubleshooting.md": {
+      "source_files": ["docs/troubleshooting.md"]
+    },
+    "docs/docker.md": {
+      "source_files": ["docs/docker.md", "docker/docker-compose.yml", "docker/Dockerfile"]
+    },
+    "docs/hardware-compatibility.md": {
+      "source_files": ["docs/hardware-compatibility.md", ".goreleaser.yaml"]
     },
     "docs/design/provider-refactoring.md": {
       "source_files": ["docs/design/provider-refactoring.md", "pkg/providers/factory.go", "pkg/providers/fallback.go"]
@@ -92,6 +119,9 @@
     },
     "docs/roadmap.md": {
       "source_files": ["ROADMAP.md"]
+    },
+    "docs/changelog.md": {
+      "source_files": ["CHANGELOG.md"]
     }
   }
 }

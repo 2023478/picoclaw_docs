@@ -28,6 +28,7 @@ PicoClaw 采用**以模型为中心**的配置方式。只需指定 `vendor/mode
 | **通义千问（Qwen）** | `qwen/` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | OpenAI | [获取](https://dashscope.console.aliyun.com) |
 | **NVIDIA** | `nvidia/` | `https://integrate.api.nvidia.com/v1` | OpenAI | [获取](https://build.nvidia.com) |
 | **Ollama（本地）** | `ollama/` | `http://localhost:11434/v1` | OpenAI | 无需 Key |
+| **LM Studio（本地）** | `lmstudio/` | `http://localhost:1234/v1` | OpenAI | 可选（本地默认无需密钥） |
 | **OpenRouter** | `openrouter/` | `https://openrouter.ai/api/v1` | OpenAI | [获取](https://openrouter.ai/keys) |
 | **vLLM（本地）** | `vllm/` | `http://localhost:8000/v1` | OpenAI | 无需 Key |
 | **Cerebras** | `cerebras/` | `https://api.cerebras.ai/v1` | OpenAI | [获取](https://cerebras.ai) |

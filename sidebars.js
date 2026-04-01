@@ -70,6 +70,10 @@ const sidebars = {
       items: [
         'providers/antigravity',
         'providers/antigravity-usage',
+        'providers/openai-api',
+        'providers/gemini-api',
+        'providers/openrouter-api',
+        'providers/siliconflow-api',
       ],
     },
     {

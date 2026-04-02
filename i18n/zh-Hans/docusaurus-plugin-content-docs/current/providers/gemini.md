@@ -33,6 +33,10 @@ Gemini 提供多个模型系列，适用于不同性能与成本场景：
 
 > ⚠️ **注意**：API Key 请妥善保管，不要泄露在公开代码库中。
 
+![Gemini API Key](/img/providers/geminiapi.png)
+
+![Gemini API Key](/img/providers/geminiapi1.png)
+
 ---
 
 ## 配置 PicoClaw

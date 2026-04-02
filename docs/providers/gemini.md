@@ -33,6 +33,10 @@ Go to [Google AI Studio](https://aistudio.google.com/) and log in with your Goog
 
 > ⚠️ **Note**: Keep your API Key secure and do not expose it in public code repositories.
 
+![Gemini API Key](/img/providers/geminiapi.png)
+
+![Gemini API Key](/img/providers/geminiapi1.png)
+
 ---
 
 ## Configuring PicoClaw

@@ -28,6 +28,7 @@ picoclaw gateway
 | **Matrix** | Easy | Open, decentralized protocol. Supports typing, placeholder, media. |
 | **WhatsApp** | Medium | Bridge mode or native (whatsmeow). |
 | **MaixCam** | Easy | Hardware-integrated AI camera. |
+| **VK** | Easy | VKontakte community bot via Long Poll API. |
 | **Pico** | Easy | Native WebSocket channel for custom clients. |
 
 ## How It Works

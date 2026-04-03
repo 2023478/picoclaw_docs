@@ -9,6 +9,91 @@ All notable changes to PicoClaw are documented here.
 
 ---
 
+## v0.2.5
+
+*Released: 2026-04-03*
+
+### Highlights
+
+- **VK (VKontakte) Channel**: New channel for Russia's largest social network, with Long Poll API, group chat support, and voice capabilities (#2276)
+- **LLM Rate Limiting**: Built-in rate limiter for provider API calls with configurable limits and automatic fallback (#2198)
+- **Pluggable Context Management**: New ContextManager abstraction enabling custom context strategies (#2203)
+- **New Providers**: Venice AI (#2238), Mimo (#1987), LMStudio (#2193) with aligned local provider defaults
+- **Enhanced Tools**: Exec tool with background execution and PTY support (#1752), reaction tool with reply-aware sends (#2156), `load_image` for local file vision (#2116), `read_file` by line range (#1981)
+- **Web UI Overhaul**: Skill marketplace hub (#2246), dashboard token auth (#1953), first-time tour guide, image messages in Pico chat (#2299), service log level controls (#2227)
+
+### Features
+
+#### Providers
+- **Venice AI**: New Venice AI provider integration (#2238)
+- **Mimo**: New Mimo provider support (#1987)
+- **LMStudio**: Local provider with aligned default auth/base handling (#2193)
+- **Azure OpenAI**: Use OpenAI Responses API for Azure endpoints (#2110)
+- **Rate Limiting**: Per-model rate limiting with automatic fallback cascade (#2198)
+- **User Agent**: Configurable `userAgent` per model in `model_list` (#2242)
+- **Model Availability**: Enhanced probing with backoff and caching (#2231)
+
+#### Channels
+- **VK (VKontakte)**: Full channel implementation — text, media attachments, voice (ASR/TTS), group triggers, and user allowlists (#2276)
+- **Telegram**: Quoted reply context and media in inbound turns (#2200); refined duplicate-message protection; fixed HTML links broken by italic regex (#2164)
+- **DingTalk**: Honor mention-only groups and strip leading mentions (#2054)
+- **Feishu**: Skip empty `random_reaction_emoji` entries
+- **WeChat**: New protocol support (#2106); persist context tokens to disk (#2124)
+- **Multi-message**: Channels support multi-message sending via split marker (#2008)
+- **Channel.Send**: Now returns delivered message IDs (#2190)
+- **Fail-fast**: Gateway fails fast when all channel startups fail (#2262)
+
+#### Core & Agent
+- **ContextManager**: Pluggable context management abstraction for custom strategies (#2203)
+- **Token Estimation**: Fixed double-counting of system message tokens; added reasoning content guards
+- **Context Overflow**: Improved detection and classification of context overflow errors (#2016)
+- **Light Provider**: Use light provider for routed model calls (#2038)
+- **Prompt Tokens**: Log prompt token usage per request (#2047)
+- **Timezone**: Load zoneinfo from `TZ` and `ZONEINFO` env variables (#2279)
+
+#### Tools
+- **Exec Tool**: Background execution and PTY support (#1752)
+- **Reaction Tool**: Emoji reactions and reply-aware message sends (#2156)
+- **load_image**: Load local image files for vision model analysis (#2116)
+- **read_file**: Read files by line range (#1981)
+- **web_search**: Date range filter support
+- **Cron**: Unified agent execution path; publish responses to outbound bus (#2147, #2100)
+- **MCP**: Support `DisableStandaloneSSE` for HTTP transport (#2108)
+
+#### Web UI & Launcher
+- **Skill Marketplace**: Browse, search, and install skills from the hub (#2246)
+- **Dashboard Auth**: Token-protected launcher dashboard with SPA login (#1953)
+- **Tour Guide**: First-time interactive tour for new users
+- **Image Messages**: Support image messages in Pico chat (#2299)
+- **Log Level Controls**: Adjust service log levels from the web UI (#2227)
+- **Config Page**: Version display moved to header; channel configs load without exposing secrets (#2273, #2277)
+- **Dashboard Token**: Persisted in launcher config (#2304)
+
+### Bug Fixes
+
+- **Telegram**: Fixed edit timeout (#2092); DM policy security hardening (#2088)
+- **Config**: Fixed `FlexibleStringSlice` crash on startup (#2078); disabled tool feedback by default (#2026); array placeholder fix
+- **Gateway**: Fixed reload causing pico channel to stop working (#2082); gateway port check and fatal log recording (#2185)
+- **Retry**: Proper `Retry-After` header handling for 429 responses with overflow-safe clamping (#2176)
+- **Loop**: Fixed polling behavior (#2103)
+- **WeChat**: Fixed pico token empty when gateway started by launcher (#2241)
+- **Web**: Hydrate cached Pico token for websocket proxy (#2222); skills page dark mode theme colors (#2166); Discord token persist from channel settings (#2024)
+- **Container**: Graceful shutdown on SIGINT/SIGTERM
+- **BM25**: Precomputed index for repeated searches (#2177)
+- **Panic Recovery**: Unified all panic events to panic log file (#2250); added missing recover in subturn (#2253)
+
+### Build & Ops
+
+- **Windows**: Fixed make build error, support custom build env (#2281)
+- **Logging**: `PICOCLAW_LOG_FILE` env var for file-only logging; component-based logger with highlighted output; default log level changed to `warn`
+- **Config**: Refactored config and security structure for simplification (#2068); `ModelConfig.Enabled` field; placeholder text supports string or list
+- **Self-update**: Robust selection and extraction with nightly default (#2201)
+- **Security**: Open-by-default warning and `*` allow_from wildcard support
+
+### Full changelog
+- [GitHub v0.2.4...v0.2.5](https://github.com/sipeed/picoclaw/compare/v0.2.4...v0.2.5)
+---
+
 ## v0.2.4
 
 *Released: 2026-03-25*

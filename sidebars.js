@@ -60,6 +60,7 @@ const sidebars = {
         'channels/onebot',
         'channels/matrix',
         'channels/maixcam',
+        'channels/vk',
         'channels/weixin',
       ],
     },

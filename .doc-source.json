@@ -1,7 +1,7 @@
 {
   "source_repo": "https://github.com/sipeed/picoclaw",
-  "source_commit": "b114dcaeb1eb6032e817fb7e7ca9a25cff4eb529",
-  "generated_at": "2026-03-31T00:00:00+08:00",
+  "source_commit": "bd56e10bb8e4cea22409ba83c19aef0295b8a9a7",
+  "generated_at": "2026-04-03T00:00:00+08:00",
   "docs": {
     "docs/intro.md": {
       "source_files": ["README.md", "assets/arch.jpg"]
@@ -65,6 +65,9 @@
     },
     "docs/channels/matrix.md": {
       "source_files": ["pkg/channels/matrix/matrix.go", "pkg/channels/matrix/init.go", "docs/channels/matrix/README.md", "docs/channels/matrix/README.zh.md"]
+    },
+    "docs/channels/vk.md": {
+      "source_files": ["pkg/channels/vk/vk.go", "pkg/channels/vk/init.go", "docs/channels/vk/README.md"]
     },
     "docs/channels/weixin.md": {
       "source_files": ["pkg/channels/weixin/weixin.go", "pkg/channels/weixin/api.go", "pkg/channels/weixin/auth.go", "pkg/channels/weixin/state.go", "docs/channels/weixin/README.md", "docs/channels/weixin/README.zh.md"]

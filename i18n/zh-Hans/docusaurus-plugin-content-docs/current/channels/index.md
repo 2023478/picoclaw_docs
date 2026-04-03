@@ -28,6 +28,7 @@ picoclaw gateway
 | **Matrix** | 简单 | 开放的去中心化协议。支持输入状态、占位消息、媒体。 |
 | **WhatsApp** | 中等 | Bridge 模式或原生协议（whatsmeow）。 |
 | **MaixCam** | 简单 | 硬件集成 AI 摄像头。 |
+| **VK** | 简单 | 通过 Long Poll API 连接 VKontakte 社区机器人。 |
 | **Pico** | 简单 | 原生 WebSocket 通道，适用于自定义客户端。 |
 
 ## 工作原理

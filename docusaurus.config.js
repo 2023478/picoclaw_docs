@@ -72,6 +72,11 @@ const config = {
             label: 'Docs',
           },
           {
+            href: 'https://picoclaw.io',
+            label: 'Website',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/sipeed/picoclaw',
             label: 'GitHub',
             position: 'right',

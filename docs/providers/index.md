@@ -52,15 +52,16 @@ For a smoother and more intuitive setup experience, we recommend using Web UI as
 
 ## Local Model Selection Note
 
-For local deployment (such as LM Studio, Ollama, and vLLM), model capability is generally positively correlated with parameter count. Use the ranges below as practical engineering guidance:
+Based on practical testing with several Qwen3.5 model sizes:
 
-- **Below 5B**: usually not suitable for agentic workflows and often fails to meet baseline task-completion needs.
-- **5B to 10B**: generally weak performance, with clear difficulty on non-trivial tasks.
-- **10B to 20B**: usable in limited cases, but reliability and task coverage are often insufficient.
-- **20B to 30B**: better usability for general tasks, but complex workflows may still be unstable.
-- **Around or above 30B**: recommended when feasible, usually with better usability and stability.
+- **9B**: suitable for simple demonstrations.
+- **27B**: can complete routine simple tasks.
+- **397B-A17B**: can handle some complex and long-running tasks.
 
-For implementation details, see [LM Studio API Guide](./lmstudio.md) and [Model Configuration](../configuration/model-list.md).
+Additional notes:
+
+- The Gemma4 series is not optimized for agent scenarios. Instruction following and tool-calling initiative are relatively weak, so it is not recommended.
+- Models below **5B** usually have very short context windows and are not suitable for agent workflows.
 
 ## Quick Setup
 

@@ -1,18 +1,18 @@
 ---
 id: dingtalk
-title: DingTalk (钉钉)
+title: DingTalk (DingDing)
 ---
 
 # DingTalk
 
-DingTalk is Alibaba's enterprise communication platform, widely used in Chinese workplaces. PicoClaw uses DingTalk's **Stream Mode** SDK, which maintains a persistent WebSocket connection — no public IP or webhook configuration needed.
+DingTalk is Alibaba's enterprise communication platform, widely used in Chinese workplaces. PicoClaw uses DingTalk's **Stream Mode** SDK, which maintains a persistent WebSocket connection without requiring a public IP or webhook configuration.
 
 ## Setup
 
 ### 1. Create an Internal App
 
 1. Go to [DingTalk Open Platform](https://open.dingtalk.com/)
-2. Click **Application Development** → **Enterprise Internal Development** → **Create Application**
+2. Click **Application Development** -> **Enterprise Internal Development** -> **Create Application**
 3. Fill in the app name and description
 
 ### 2. Get Credentials
@@ -22,7 +22,7 @@ DingTalk is Alibaba's enterprise communication platform, widely used in Chinese 
 
 ### 3. Enable Robot Capability
 
-1. Go to **App Features** → **Robot**
+1. Go to **App Features** -> **Robot**
 2. Enable the robot capability
 3. The robot can work in both **group chats** and **private chats**
 
@@ -30,24 +30,45 @@ DingTalk is Alibaba's enterprise communication platform, widely used in Chinese 
 
 In **Permissions & Scopes**, ensure the following permissions are granted:
 
-- Receive messages (for receiving user messages)
-- Send messages (for sending bot replies)
+- Receive messages
+- Send messages
 
 ### 5. Configure PicoClaw
+
+#### 1. WebUI Configuration
+
+We recommend using the WebUI first because it is faster and more convenient.
+
+![WebUI DingTalk Connection Interface](/img/channels/webui_dingtalk.png)
+
+Fill in the Client ID (`YOUR_CLIENT_ID`) and Client Secret (`YOUR_CLIENT_SECRET`) in order, then click **Save**.
+
+#### 2. Configuration Files
+
+Edit `~/.picoclaw/.security.yml`:
+
+```yaml
+dingtalk:
+  settings:
+    client_secret: YOUR_CLIENT_SECRET
+```
+
+Edit `~/.picoclaw/config.json`:
 
 ```json
 {
   "channels": {
-    "dingtalk": {
       "enabled": true,
-      "client_id": "YOUR_CLIENT_ID",
-      "client_secret": "YOUR_CLIENT_SECRET",
-      "allow_from": [],
-      "group_trigger": {
-        "mention_only": true
+      "type": "dingtalk",
+      "reasoning_channel_id": "",
+      "group_trigger": {},
+      "typing": {},
+      "placeholder": {
+        "enabled": false
       },
-      "reasoning_channel_id": ""
-    }
+      "settings": {
+        "client_id": "YOUR_CLIENT_ID"
+      }
   }
 }
 ```
@@ -74,9 +95,9 @@ picoclaw gateway
 
 DingTalk Stream Mode uses a persistent WebSocket connection maintained by the SDK:
 
-- **No public IP needed** — the SDK connects outbound to DingTalk servers
-- **Automatic reconnection** — the SDK handles disconnections and reconnects automatically
-- **Real-time delivery** — messages are pushed instantly via the WebSocket channel
+- **No public IP needed**: the SDK connects outbound to DingTalk servers
+- **Automatic reconnection**: the SDK handles disconnections and reconnects automatically
+- **Real-time delivery**: messages are pushed instantly via the WebSocket channel
 
 ### Message Handling
 

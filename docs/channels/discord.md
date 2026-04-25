@@ -10,7 +10,7 @@ title: Discord
 ### 1. Create a Bot
 
 - Go to [discord.com/developers/applications](https://discord.com/developers/applications)
-- Create an application → Bot → Add Bot
+- Create an application -> Bot -> Add Bot
 - Copy the bot token
 
 ### 2. Enable Intents
@@ -19,19 +19,48 @@ title: Discord
 
 ### 3. Get Your User ID
 
-- Discord Settings → Advanced → enable **Developer Mode**
-- Right-click your avatar → **Copy User ID**
+- Discord Settings -> Advanced -> enable **Developer Mode**
+- Right-click your avatar -> **Copy User ID**
 
 ### 4. Configure
+
+#### 1. WebUI Configuration
+
+We recommend using the WebUI first because it is faster and more convenient.
+
+![WebUI Discord Connection Interface](/img/channels/webui_discord.png)
+
+Fill in the Bot Token (`YOUR_BOT_TOKEN`) and Allowed Sources (`YOUR_USER_ID`) in order, then click **Save**.
+
+#### 2. Configuration Files
+
+Edit `~/.picoclaw/.security.yml`:
+
+```yaml
+discord:
+  settings:
+    token: YOUR_BOT_TOKEN
+```
+
+Edit `~/.picoclaw/config.json`:
 
 ```json
 {
   "channels": {
     "discord": {
       "enabled": true,
-      "token": "YOUR_BOT_TOKEN",
-      "allow_from": ["YOUR_USER_ID"],
-      "group_trigger": {
+      "type": "discord",
+      "allow_from": [
+        "YOUR_USER_ID"
+      ],
+      "reasoning_channel_id": "",
+      "group_trigger": {},
+      "typing": {},
+      "placeholder": {
+        "enabled": false
+      },
+      "settings": {
+        "proxy": "",
         "mention_only": false
       }
     }
@@ -50,7 +79,7 @@ title: Discord
 
 ### 5. Invite the Bot
 
-- OAuth2 → URL Generator
+- OAuth2 -> URL Generator
 - Scopes: `bot`
 - Bot Permissions: `Send Messages`, `Read Message History`
 - Open the generated invite URL and add the bot to your server
@@ -63,7 +92,7 @@ picoclaw gateway
 
 ## Group Trigger
 
-Control how the bot responds in server channels (does not affect DMs — the bot always responds in DMs):
+Control how the bot responds in server channels (does not affect DMs; the bot always responds in DMs):
 
 ```json
 {

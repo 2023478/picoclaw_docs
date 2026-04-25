@@ -2,7 +2,6 @@
 id: telegram
 title: Telegram
 ---
-
 # Telegram
 
 Telegram 是**推荐**的通道。设置简单，支持语音转写。
@@ -22,27 +21,53 @@ Telegram 是**推荐**的通道。设置简单，支持语音转写。
 
 ### 3. 配置
 
+#### 1.webui配置
+
+优先推荐webui配置(方便快捷)
+
+![WebUI Telegram Connection Interface](/img/channels/webui_telegram.png)
+
+依次填入Bot Token（YOUR_BOT_TONKEN），允许来源（YOUR_USER_ID）
+之后点击保存即可
+
+#### 2.配置文件
+
+修改 `~/.picoclaw/.security.yml`
+
+```
+  telegram:
+    settings:
+      token: YOUR_BOT_TONKEN
+
+```
+
+修改 `~/.picoclaw/config.json`
+
 ```json
+
 {
   "channels": {
     "telegram": {
       "enabled": true,
-      "token": "YOUR_BOT_TOKEN",
-      "allow_from": ["YOUR_USER_ID"]
+      "allow_from": [
+        "YOUR_USER_ID"
+      ],
+      "reasoning_channel_id": "",
+      "group_trigger": {},
     }
   }
 }
 ```
 
-| 字段 | 类型 | 说明 |
-| --- | --- | --- |
-| `enabled` | bool | 启用/禁用该通道 |
-| `token` | string | 从 @BotFather 获取的机器人 token |
-| `base_url` | string | 自定义 Telegram Bot API 服务器地址（可选） |
-| `proxy` | string | HTTP/SOCKS 代理地址（可选，也会读取 `HTTP_PROXY` 环境变量） |
-| `allow_from` | array | 允许的用户 ID 列表（空数组 = 允许所有人） |
-| `reasoning_channel_id` | string | 将推理过程输出到单独的聊天 |
-| `group_trigger` | object | 群聊触发设置（`mention_only`、`prefixes`） |
+| 字段                     | 类型   | 说明                                                          |
+| ------------------------ | ------ | ------------------------------------------------------------- |
+| `enabled`              | bool   | 启用/禁用该通道                                               |
+| `token`                | string | 从 @BotFather 获取的机器人 token                              |
+| `base_url`             | string | 自定义 Telegram Bot API 服务器地址（可选）                    |
+| `proxy`                | string | HTTP/SOCKS 代理地址（可选，也会读取 `HTTP_PROXY` 环境变量） |
+| `allow_from`           | array  | 允许的用户 ID 列表（空数组 = 允许所有人）                     |
+| `reasoning_channel_id` | string | 将推理过程输出到单独的聊天                                    |
+| `group_trigger`        | object | 群聊触发设置（`mention_only`、`prefixes`）                |
 
 ### 4. 运行
 
@@ -88,11 +113,11 @@ Telegram 语音消息可通过 Groq 的 Whisper 自动转写：
 
 Telegram 通道注册了以下内置命令：
 
-| 命令 | 说明 |
-| --- | --- |
-| `/start` | 欢迎消息 |
-| `/help` | 显示帮助 |
-| `/show [model\|channel]` | 显示当前配置 |
+| 命令                        | 说明         |
+| --------------------------- | ------------ |
+| `/start`                  | 欢迎消息     |
+| `/help`                   | 显示帮助     |
+| `/show [model\|channel]`   | 显示当前配置 |
 | `/list [models\|channels]` | 列出可用选项 |
 
 ## 引用回复支持

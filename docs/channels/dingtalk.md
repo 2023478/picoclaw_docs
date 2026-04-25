@@ -81,13 +81,13 @@ picoclaw gateway
 
 ## Field Reference
 
-| Field                    | Type   | Required | Description                                                                      |
-| ------------------------ | ------ | -------- | -------------------------------------------------------------------------------- |
-| `client_id`            | string | Yes      | DingTalk app Client ID (AppKey)                                                  |
-| `client_secret`        | string | Yes      | DingTalk app Client Secret (AppSecret)                                           |
-| `allow_from`           | array  | No       | DingTalk user ID whitelist (empty = allow all)                                   |
-| `group_trigger`        | object | No       | Group chat trigger settings (see[Common Channel Fields](../#common-channel-fields)) |
-| `reasoning_channel_id` | string | No       | Route reasoning output to a separate chat                                        |
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `client_id` | string | Yes | DingTalk app Client ID (AppKey) |
+| `client_secret` | string | Yes | DingTalk app Client Secret (AppSecret) |
+| `allow_from` | array | No | DingTalk user ID whitelist (empty = allow all) |
+| `group_trigger` | object | No | Group chat trigger settings (see [Common Channel Fields](../#common-channel-fields)) |
+| `reasoning_channel_id` | string | No | Route reasoning output to a separate chat |
 
 ## How It Works
 
@@ -112,8 +112,8 @@ When the bot is @-mentioned in a group chat, PicoClaw automatically strips leadi
 
 ### Group vs Private Chat
 
-| Feature | Private Chat     | Group Chat                |
-| ------- | ---------------- | ------------------------- |
-| Trigger | Any message      | @mention by default       |
-| Reply   | Direct response  | Reply via session webhook |
-| Context | Per-user session | Per-group session         |
+| Feature | Private Chat | Group Chat |
+| --- | --- | --- |
+| Trigger | Any message | @mention by default |
+| Reply | Direct response | Reply via session webhook |
+| Context | Per-user session | Per-group session |

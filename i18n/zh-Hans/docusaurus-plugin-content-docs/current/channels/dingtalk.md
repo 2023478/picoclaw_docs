@@ -11,7 +11,7 @@ title: 钉钉
 
 ### 1. 创建企业内部应用
 
-1. 前往 [钉钉开放平台](https://open.dingtalk.com/)
+1. 前往[钉钉开放平台](https://open.dingtalk.com/)
 2. 点击 **应用开发** → **企业内部开发** → **创建应用**
 3. 填写应用名称和描述
 
@@ -85,8 +85,8 @@ picoclaw gateway
 | --- | --- | --- | --- |
 | `client_id` | string | 是 | 钉钉应用 Client ID（AppKey） |
 | `client_secret` | string | 是 | 钉钉应用 Client Secret（AppSecret） |
-| `allow_from` | array | 否 | 钉钉用户 ID 白名单（空数组 = 允许所有用户） |
-| `group_trigger` | object | 否 | 群聊触发设置（见 [通用通道字段](../#common-channel-fields)） |
+| `allow_from` | array | 否 | 用户 ID 白名单（空数组 = 允许所有用户） |
+| `group_trigger` | object | 否 | 群聊触发设置（见[通用通道字段](../#通用通道字段)） |
 | `reasoning_channel_id` | string | 否 | 将推理过程输出到单独的聊天 |
 
 ## 工作原理

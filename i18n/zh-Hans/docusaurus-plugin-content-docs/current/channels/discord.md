@@ -15,11 +15,11 @@ title: Discord
 
 ### 2. 启用 Intents
 
-- 在 Bot 设置中启用 **MESSAGE CONTENT INTENT**
+- 在 Bot 设置中，启用 **MESSAGE CONTENT INTENT**
 
 ### 3. 获取你的用户 ID
 
-- Discord 设置 → 高级 → 启用 **开发者模式**
+- Discord 设置 → 高级 → 启用**开发者模式**
 - 右键点击你的头像 → **复制用户 ID**
 
 ### 4. 配置

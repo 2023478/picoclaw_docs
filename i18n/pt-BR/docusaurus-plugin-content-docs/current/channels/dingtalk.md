@@ -95,9 +95,9 @@ picoclaw gateway
 
 O Stream Mode do DingTalk usa uma conexão WebSocket persistente mantida pelo SDK:
 
-- **Não precisa de IP público**: o SDK conecta-se de forma outbound aos servidores do DingTalk
-- **Reconexão automática**: o SDK lida com desconexões e reconecta automaticamente
-- **Entrega em tempo real**: as mensagens são entregues instantaneamente pelo canal WebSocket
+- **Não precisa de IP público** — o SDK conecta-se de forma outbound aos servidores do DingTalk
+- **Reconexão automática** — o SDK lida com desconexões e reconecta automaticamente
+- **Entrega em tempo real** — as mensagens são entregues instantaneamente pelo canal WebSocket
 
 ### Tratamento de Mensagens
 

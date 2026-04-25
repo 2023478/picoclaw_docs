@@ -64,6 +64,19 @@ PicoClaw 采用**以模型为中心**的配置方式。只需指定 `vendor/mode
 
 另外也支持别名，例如：`qwen-international`、`dashscope-intl`、`dashscope-us`、`alibaba-coding`、`qwen-coding`、`alibaba-coding-anthropic`、`copilot`、`claudecli`、`codexcli`。
 
+## 本地模型选型提示
+
+基于对 Qwen3.5 不同参数规模模型的实测，可参考以下测试结论：
+
+- **9B**：可作为简单演示使用。
+- **27B**：可完成日常简单任务。
+- **397B-A17B**：可完成部分复杂长任务。
+
+额外注意点：
+
+- Gemma4 系列未针对 Agent 场景优化，在指令遵从性和工具调用积极性方面相对较弱，不推荐使用。
+- **5B 以下**的小模型通常只有较短上下文，不适用于 Agent 工作流。
+
 ## 通过自定义 API Base 接入任意兼容模型
 
 不局限于上表中的提供商。使用 `openai/` 或 `anthropic/` 前缀，并配合第三方 `api_base`，即可接入任意 OpenAI 兼容或 Anthropic 兼容模型。
@@ -77,7 +90,7 @@ PicoClaw 采用**以模型为中心**的配置方式。只需指定 `vendor/mode
 }
 ```
 
-## 推荐配置方式
+## 配置文件
 
 在配置 schema `2` 中，建议将模型结构放在 `config.json`，将密钥放在 `.security.yml`。
 以下示例聚焦模型相关字段。作为完整配置文件时，请在顶层保留 `"version": 2`。

@@ -64,6 +64,19 @@ This enables **multi-agent support** with flexible provider selection:
 
 Protocol aliases are also supported, for example: `qwen-international`/`dashscope-intl`, `dashscope-us`, `alibaba-coding`, `qwen-coding`, `alibaba-coding-anthropic`, `copilot`, `claudecli`, and `codexcli`.
 
+## Local Model Selection Note
+
+Based on practical testing with several Qwen3.5 model sizes:
+
+- **9B**: suitable for simple demonstrations.
+- **27B**: can complete routine simple tasks.
+- **397B-A17B**: can handle some complex and long-running tasks.
+
+Additional notes:
+
+- The Gemma4 series is not optimized for agent scenarios. Instruction following and tool-calling initiative are relatively weak, so it is not recommended.
+- Models below **5B** usually have very short context windows and are not suitable for agent workflows.
+
 ## Any Compatible Model via Custom API Base
 
 You are not limited to the vendors listed above. You can use `openai/` or `anthropic/` with a third-party `api_base` to connect any OpenAI-compatible or Anthropic-compatible model.
